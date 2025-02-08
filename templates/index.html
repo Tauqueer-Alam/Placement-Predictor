@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 7px 20px 20px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+           margin-top: 20px;
+           margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #2b07b9;
+
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Placement Predictor</h2>
+        <form action="/predict" method="post">
+            <label for="cgpa">CGPA:</label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required>
+        
+            <label for="ssc">10th Percentage:</label>
+            <input type="number" id="ssc" name="ssc" step="0.01" min="0" max="100" required>
+        
+            <label for="hsc">12th Percentage:</label>
+            <input type="number" id="hsc" name="hsc" step="0.01" min="0" max="100" required>
+        
+            <label for="internship">Internships:</label>
+            <select id="internship" name="internship">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        
+            <label for="projects">Projects:</label>
+            <select id="projects" name="projects">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        
+            <label for="workshop">Workshops/Certifications:</label>
+            <select id="workshop" name="workshop">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        
+            <label for="aptitude">Aptitude Test Score: (0 to 100)</label>
+            <input type="number" id="aptitude" name="aptitude" step="0.01" min="0" max="100" required>
+        
+            <label for="softskills">Soft Skills Rating: (2 to 5)</label>
+            <input type="number" id="softskills" name="softskills" step="0.01" min="2" max="5" required>
+        
+            <label for="extra">Extracurricular Activities:</label>
+            <select id="extra" name="extra">
+                <option value="no" selected>No</option>
+                <option value="yes">Yes</option>
+            </select>
+        
+            <label for="training">Placement Training:</label>
+            <select id="training" name="training">
+                <option value="no" selected>No</option>
+                <option value="yes">Yes</option>
+
+            </select>
+        
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        
+    </div>
+</body>
+</html>
